@@ -7,34 +7,34 @@ import java.util.HashMap;
  */
 public class Node {
     public int id; // incremental
-    public HashMap<Node, Double> neighbors = new HashMap<>(); // maps neighbors to costs
+    public HashMap<Node, Double> neighbors = new HashMap<>(); // maps each neighbor to the cost of moving to it
     public double g; // distance from start node
     public double h; // heuristic from goal node
     public boolean visited = false;
+    public boolean updated = false; // to be used by aLSS_LRTASearcher
 
-    /**
-     * Get heuristic from node
-     * @return
-     */
-    public double getH(Node node) {
-        return Integer.MAX_VALUE;
-    }
-
-    /**
-     * Constructor
-     */
     public Node(int id) {
         this.id = id;
     }
 
     /**
-     * Add neighbor to self's neighbors and self to neighbor's neighbors
+     * get initial heuristic from node
+     */
+    public double getInitialH(Node node) {
+        return Integer.MAX_VALUE;
+    }
+
+    /**
+     * add neighbor to self's neighbors and self to neighbor's neighbors
      */
     public void addNeighbor(Node neighbor, double cost){
         neighbors.put(neighbor, cost);
         neighbor.neighbors.put(this, cost);
     }
 
+    /**
+     * get f = g + h
+     */
     public double getF() {
         return g + h;
     }

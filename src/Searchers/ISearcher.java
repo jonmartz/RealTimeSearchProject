@@ -4,7 +4,7 @@ import Models.Node;
 
 import java.util.List;
 
-public interface ISearch {
+public interface ISearcher {
 
     /**
      * Find a shortest path from start to goal.

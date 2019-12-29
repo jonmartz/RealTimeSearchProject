@@ -54,6 +54,8 @@ public class GridGraph extends Graph {
                 }
                 row++;
             }
+            reset();
+
         } catch (IOException e) {
             e.printStackTrace();
         }

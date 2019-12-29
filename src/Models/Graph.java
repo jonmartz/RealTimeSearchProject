@@ -25,7 +25,9 @@ public class Graph {
      */
     public void reset() {
         for (Node node : nodes){
+            node.g = Integer.MAX_VALUE;
             node.visited = false;
+            node.updated = false;
         }
     }
 }

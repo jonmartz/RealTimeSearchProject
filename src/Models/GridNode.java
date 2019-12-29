@@ -29,7 +29,7 @@ public class GridNode extends Node{
     }
 
     @Override
-    public double getH(Node node) {
+    public double getInitialH(Node node) {
         return getManhattanDistance((GridNode)node);
     }
 
