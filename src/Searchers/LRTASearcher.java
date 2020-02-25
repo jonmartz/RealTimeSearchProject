@@ -6,6 +6,7 @@ import java.util.Map;
 
 /**
  * LRTA* implementation
+ *
  */
 public class LRTASearcher extends AbstractRTSearcher {
 
