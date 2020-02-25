@@ -12,6 +12,7 @@ public class Node {
     public double h; // heuristic from goal node
     public boolean visited = false;
     public boolean updated = false; // to be used by aLSS_LRTASearcher
+    public boolean manualInitialH = false; // to indicate a manual h value was set
 
     public Node(int id) {
         this.id = id;
@@ -21,6 +22,8 @@ public class Node {
      * get initial heuristic from node
      */
     public double getInitialH(Node node) {
+        if (manualInitialH)
+            return h;
         return Integer.MAX_VALUE;
     }
 
@@ -42,5 +45,10 @@ public class Node {
     @Override
     public String toString() {
         return String.valueOf(id);
+    }
+
+    public void setInitialH(int h) {
+        this.h = h;
+        manualInitialH = true;
     }
 }

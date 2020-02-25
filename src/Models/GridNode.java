@@ -24,17 +24,31 @@ public class GridNode extends Node{
      * @param node to measure distance from
      * @return manhattan distance
      */
-    private int getManhattanDistance(GridNode node) {
+    private double getManhattanDistance(GridNode node) {
         return Math.abs(node.x-x)+Math.abs(node.y-y);
+    }
+
+    /**
+     * Get the octile distance. May generate heuristic depressions
+     * @param node to measure distance from
+     * @return octile distance
+     */
+    private double getOctileDistance(GridNode node) {
+        int x_delta = Math.abs(x-node.x);
+        int y_delta = Math.abs(y-node.y);
+        return (x_delta + y_delta) + (Math.sqrt(2) - 2) * Math.min(x_delta, y_delta);
     }
 
     @Override
     public double getInitialH(Node node) {
-        return getManhattanDistance((GridNode)node);
+        if (manualInitialH)
+            return h;
+        return getOctileDistance((GridNode)node);
+//        return getManhattanDistance((GridNode)node);
     }
 
     @Override
     public String toString() {
-        return "("+x+", "+y+")";
+        return "("+x+", "+y+") h="+h;
     }
 }

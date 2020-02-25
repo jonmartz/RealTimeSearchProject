@@ -8,6 +8,10 @@ import java.util.*;
 public class Graph {
     public ArrayList<Node> nodes = new ArrayList<>();
 
+    // optional
+    public Node start;
+    public Node goal;
+
     public void addNode(Node node){
         nodes.add(node);
     }

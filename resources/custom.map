@@ -1,0 +1,11 @@
+type octile
+height 6
+width 6
+map
+TTTTTT
+T6543T
+T7T32T
+T43T1T
+T3sTgT
+TTTTTT
+s=2
