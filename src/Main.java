@@ -53,8 +53,6 @@ public class Main {
                         writer.append(",failed,failed");
                     }
                     graph.reset();
-//                System.out.println("time = "+runTime + " ms, path len = "+path.size());
-//                for (Node node : path) System.out.println(node);
                 }
                 writer.append("\n");
             }
